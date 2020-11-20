@@ -22,99 +22,150 @@
         limit_e="1000" limit_l="-0.875" limit_u="1.57" limit_v="0.5" />
             
     <m_link_cylinder name="${link_01_name}"
-        origin_rpy="0 1.57 0" origin_xyz="0.1 0 0"
-        radius="0.15" length="0.2"
+        origin_rpy="0 1.57 0" origin_xyz="0.075 0 0"
+        radius="0.075" length="0.15"
         mass="1" 
-        ixx="12.679" ixy="0" ixz="0"
-        iyy="12.679" iyz="0"
-        izz="0.651" /> <!-- mass(kg) TODO : INERTIA-->
+        ixx="0.00328125" ixy="0" ixz="0"
+        iyy="0.00328125" iyz="0"
+        izz="0.00328125" />
 
     <m_joint name="${link_01_name}__${link_02_name}" type="revolute"
         axis_xyz="1 0 0"
-        origin_rpy="0 0 0" origin_xyz="0.2 0 0"
+        origin_rpy="0 0 0" origin_xyz="0.15 0 0"
         parent="${link_01_name}" child="${link_02_name}"
         limit_e="1000" limit_l="0" limit_u="3.14" limit_v="0.5" />
 
     <m_link_cylinder name="${link_02_name}"
-        origin_rpy="0 0 0" origin_xyz="0.15 0 0"
-        radius="0.15" length="0.3"
-        mass="1" 
-        ixx="12.679" ixy="0" ixz="0"
-        iyy="12.679" iyz="0"
-        izz="0.651" /> <!-- mass(kg) TODO : INERTIA-->
+        origin_rpy="0 0 0" origin_xyz="0.075 0 -0.075"
+        radius="0.075" length="0.3"
+        mass="2.5" 
+        ixx="0.022265625" ixy="0" ixz="0"
+        iyy="0.022265625" iyz="0"
+        izz="0.00703125" />
     
     <m_joint name="${link_02_name}__${link_03_name}" type="revolute"
         axis_xyz="0 0 1"
-        origin_rpy="0 0 0" origin_xyz="0.15 0 -0.15"
+        origin_rpy="0 0 0" origin_xyz="0.075 0 -0.225"
         parent="${link_02_name}" child="${link_03_name}"
         limit_e="1000" limit_l="-2.42" limit_u="2.42" limit_v="0.5" />
 
     <m_link_cylinder name="${link_03_name}"
-        origin_rpy="0 0 0" origin_xyz="0 0 -0.2"
-        radius="0.15" length="0.4"
-        mass="1" 
-        ixx="12.679" ixy="0" ixz="0"
-        iyy="12.679" iyz="0"
-        izz="0.651" /> <!-- mass(kg) TODO : INERTIA-->
+        origin_rpy="0 0 0" origin_xyz="0 0 -0.15"
+        radius="0.075" length="0.3"
+        mass="2.5" 
+        ixx="0.022265625" ixy="0" ixz="0"
+        iyy="0.022265625" iyz="0"
+        izz="0.00703125" />
 
     <m_joint name="${link_03_name}__${link_04_name}" type="revolute"
         axis_xyz="1 0 0"
-        origin_rpy="0 0 0" origin_xyz="0 0 -0.4"
+        origin_rpy="0 0 0" origin_xyz="0 0 -0.3"
         parent="${link_03_name}" child="${link_04_name}"
         limit_e="1000" limit_l="0" limit_u="1.57" limit_v="0.5" />
 
     <m_link_cylinder name="${link_04_name}"
-        origin_rpy="0 0 0" origin_xyz="0 0 -0.2"
-        radius="0.15" length="0.4"
-        mass="1" 
-        ixx="12.679" ixy="0" ixz="0"
-        iyy="12.679" iyz="0"
-        izz="0.651" /> <!-- mass(kg) TODO : INERTIA-->
+        origin_rpy="0 0 0" origin_xyz="0 0 -0.10"
+        radius="0.075" length="0.2"
+        mass="2" 
+        ixx="0.00947916666667" ixy="0" ixz="0"
+        iyy="0.00947916666667" iyz="0"
+        izz="0.005625" />
 
     <m_joint name="${link_04_name}__${link_05_name}" type="revolute"
         axis_xyz="0 0 1"
-        origin_rpy="0 0 0" origin_xyz="0 0 -0.4"
+        origin_rpy="0 0 0" origin_xyz="0 0 -0.2"
         parent="${link_04_name}" child="${link_05_name}"
         limit_e="1000" limit_l="-2.42" limit_u="2.42" limit_v="0.5" />
 
     <m_link_cylinder name="${link_05_name}"
-        origin_rpy="0 0 0" origin_xyz="0 0 -0.15"
-        radius="0.10" length="0.3"
-        mass="1" 
-        ixx="12.679" ixy="0" ixz="0"
-        iyy="12.679" iyz="0"
-        izz="0.651" /> <!-- mass(kg) TODO : INERTIA-->
+        origin_rpy="0 0 0" origin_xyz="0 0 -0.075"
+        radius="0.085" length="0.15"
+        mass="1.5" 
+        ixx="0.005521875" ixy="0" ixz="0"
+        iyy="0.005521875" iyz="0"
+        izz="0.00541875" />
 
     <m_joint name="${link_05_name}__${link_06_name}" type="revolute"
         axis_xyz="1 0 0"
-        origin_rpy="0 0 0" origin_xyz="0 0 -0.3"
+        origin_rpy="0 0 0" origin_xyz="0 0 -0.15"
         parent="${link_05_name}" child="${link_06_name}"
         limit_e="1000" limit_l="-1.00" limit_u="1.00" limit_v="0.5" />
 
     <m_link_cylinder name="${link_06_name}"
-        origin_rpy="0 0 0" origin_xyz="0 0 -0.05"
-        radius="0.05" length="0.1"
+        origin_rpy="0 0 0" origin_xyz="0 0 -0.04"
+        radius="0.04" length="0.08"
         mass="1" 
-        ixx="12.679" ixy="0" ixz="0"
-        iyy="12.679" iyz="0"
-        izz="0.651" /> <!-- mass(kg) TODO : INERTIA -->
+        ixx="0.000933333333333" ixy="0" ixz="0"
+        iyy="0.000933333333333" iyz="0"
+        izz="0.0008" />
 
     <m_joint name="${link_06_name}__${link_07_name}" type="revolute"
         axis_xyz="0 1 0"
-        origin_rpy="0 0 0" origin_xyz="0 0 -0.1"
+        origin_rpy="0 0 0" origin_xyz="0 0 -0.08"
         parent="${link_06_name}" child="${link_07_name}"
         limit_e="1000" limit_l="-0.40" limit_u="0.40" limit_v="0.5" />
 
     <m_link_cylinder name="${link_07_name}"
         origin_rpy="0 0 0" origin_xyz="0 0 -0.025"
-        radius="0.05" length="0.05"
+        radius="0.04" length="0.05"
         mass="1" 
-        ixx="12.679" ixy="0" ixz="0"
-        iyy="12.679" iyz="0"
-        izz="0.651" /> <!-- mass(kg) TODO : INERTIA -->
-
-
+        ixx="0.000608333333333" ixy="0" ixz="0"
+        iyy="0.000608333333333" iyz="0"
+        izz="0.0008" />
     
+  <!-- PINZA -->
+  <joint name="${link_07_name}__${link_08_name}" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="0 0 -0.025" />
+    <parent link="${link_07_name}" />
+    <child link="${link_08_name}" />
+    </joint>
+
+  <m_link_cylinder name="${link_08_name}"
+              origin_rpy="1.5708 0 0" origin_xyz="0 0 0"
+              mass="0.4"
+              ixx="0.05" ixy="0" ixz="0"
+              iyy="0.002" iyz="0"
+              izz="0.05"
+              radius="0.025" length="0.25" />
+
+  <m_joint name="${link_08_name}__${link_09_name}" type="prismatic"
+           axis_xyz="0 1 0"
+           origin_rpy="0 0 0" origin_xyz="0 0.1125 0"
+           parent="${link_08_name}" child="${link_09_name}"
+           limit_e="100" limit_l="-0.0875" limit_u="0.0" limit_v="0.5" />
+
+  <m_link_cylinder name="${link_09_name}"
+              origin_rpy="0 3.14 0" origin_xyz="0 0 -0.1"
+              mass="0.2"
+              ixx="0.02" ixy="0" ixz="0"
+              iyy="0.02" iyz="0"
+              izz="0.001"
+              radius="0.025" length="0.15" />
+
+
+  <m_joint name="${link_08_name}__${link_10_name}" type="prismatic"
+           axis_xyz="0 1 0"
+           origin_rpy="0 0 0" origin_xyz="0 -0.1125 0"
+           parent="${link_08_name}" child="${link_10_name}"
+           limit_e="100" limit_l="0" limit_u="0.0875" limit_v="0.5" />
+
+  <m_link_cylinder name="${link_10_name}"
+              origin_rpy="0 3.14 0" origin_xyz="0 0 -0.1"
+              mass="0.2"
+              ixx="0.02" ixy="0" ixz="0"
+              iyy="0.02" iyz="0"
+              izz="0.001"
+              radius="0.025" length="0.15" />
+
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/myroboticarm</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+            <legacyModeNS>true</legacyModeNS>
+        </plugin>
+    </gazebo> 
 
 
 </robot>
