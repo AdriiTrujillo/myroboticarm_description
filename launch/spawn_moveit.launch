@@ -4,7 +4,7 @@
     <group ns="/myroboticarm">
         
         <!-- Robot model -->
-        <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find myroboticarm_description)/urdf/arm.xacro'" />
+        <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find myroboticarm_description)/urdf/arm_moveit.xacro'" />
         <arg name="x" default="0"/>
         <arg name="y" default="0"/>
         <arg name="z" default="0"/>
@@ -14,27 +14,24 @@
               args="-urdf -param robot_description -model my_arm -x $(arg x) -y $(arg y) -z $(arg z)" />
       
         <!-- Load controllers -->
-        <rosparam command="load" file="$(find myroboticarm_description)/config/joints.yaml" />
+        <rosparam command="load" file="$(find myroboticarm_description)/config/joints_moveit.yaml" />
         
         <!-- Controllers -->
         <node name="controller_spawner" pkg="controller_manager" type="spawner"
             respawn="false" output="screen" ns="/myroboticarm"
             args="--namespace=/myroboticarm
             joint_state_controller
-            joint1_position_controller
-            joint2_position_controller
-            joint3_position_controller
-            joint4_position_controller
-            joint5_position_controller
-            joint6_position_controller
-            joint7_position_controller
-            joint9_position_controller
-            joint10_position_controller
+            arm_controller
+            hand_controller
             --timeout 60">
-        </node> <!-- La artiuclación 8 es fija por eso no necesita controlador -->
+        </node>
+
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+            respawn="false" output="screen">
+            <remap from="/joint_states" to="/myroboticarm/joint_states" />
+        </node>
         
         <!-- rqt -->
-        <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" />
         <node name="rqt_publisher" pkg="rqt_publisher" type="rqt_publisher" />
     
     </group>

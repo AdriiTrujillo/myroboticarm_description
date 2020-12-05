@@ -1,2 +1,3 @@
-Creating from Zero a robotic arm of 7 degrees of freedom. This arm tries to emulate Talos arm manipulability
-and similiraties.  
+Creating from scratch a robotic arm of 7 degrees of freedom. This arm tries to emulate Talos arm manipulability
+and similiraties. This arm is aimed to do pick and place tasks. Besides due to its small size and weight it is 
+able to be 'cobot', as well thanks to its similiraties with a human arm it is esaily adaptable to users to work with it. 
